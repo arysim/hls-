@@ -1,13 +1,25 @@
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<video id="video"></video>
-<script>
-  if(Hls.isSupported()) {
-    var video = document.getElementById('video');
-    var hls = new Hls();
-    hls.loadSource('https://m3u9.ml/b/hls1/boborj.m3u8?mu3zAQc9HC3GbwJq=84e1Jz350aTk_fTwov8ONg&3U1G7qaTxrPbalZnEx=1641093821');
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED,function() {
-      video.play();
-  });
- }
-</script>
+<!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset=utf-8 />
+    <title>Your title</title>
+      
+    
+      <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+      <script src="https://unpkg.com/video.js/dist/video.js"></script>
+      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+       
+    </head>
+    <body>
+      <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+      data-setup='{}'>
+        <source src="https://m3u9.ml/b/hls1/boborj.m3u8?mu3zAQc9HC3GbwJq=bLqTigJZ29EtYJvwSaK-hA&3U1G7qaTxrPbalZnEx=1641149749" type="application/x-mpegURL">
+      </video>
+      
+    <script>
+    var player = videojs('my_video_1');
+    player.play();
+    </script>
+      
+    </body>
+    </html>
