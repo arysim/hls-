@@ -1,25 +1,16 @@
-<!DOCTYPEhtml >
-    < html >
-    < cabeça >
-    < meta  charset = utf-8 />
-    < title > Seu título </ title >
-      
-    
-      < link  href =" https://unpkg.com/video.js/dist/video-js.css " rel =" folha de estilo " >
-      < script  src =" https://unpkg.com/video.js/dist/video.js " > </ script >
-      < script  src =" https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js " > </ script >
-       
-    </ cabeça >
-    < corpo >
-      < video  id =" my_video_1 " class =" video-js vjs-fluid vjs-default-skin " controla  preload =" auto "
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"></video>
+<script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource(' < video  id =" my_video_1 " class =" video-js vjs-fluid vjs-default-skin " controla  preload =" auto "
       configuração de dados =' {} ' >
         < source  src =" https://origin.esporteone.com/TLCSD/tracks-v1a1/mono.m3u8?md5=4dAE5hWtw-SETvP4zy8ZeQ&expires=1653614564 " >
-      </ vídeo >
-      
-    < roteiro >
-    var  player  =  videojs ( 'my_video_1' ) ;
-    jogador . jogar ( ) ;
-    </ script >
-      
-    </ corpo >
-    </ html >
+      </ vídeo >');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+</script>
