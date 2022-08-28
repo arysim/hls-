@@ -1,2 +1,25 @@
-<!-- Paste the following into the <head> --><!-- Paste the following into the <body> --><script type="text/javascript" src="https://cdn.jwplayer.com/libraries/5iYdPgsG.js"></script><div id="MediaPlayerMiniPlayer">Loading...</div><script type="text/javascript"> jwplayer("MediaPlayerMiniPlayer").setup({sources: [ {file: 'https://m3u9.ml/a2/hls1/band.m3u8?mu3zAQc9HC3GbwJq=rPKAQsA6pna34LqAe8swhw&3U1G7qaTxrPbalZnEx=1661755571.m3u8?mu3zAQc9HC3GbwJq=WtqHle3hGtk6EZ7INQ_vNw&3U1G7qaTxrPbalZnEx=1654393996'} ],rtmp: { bufferlength: 120, },'autostart': 'false','image': '','playbackRateControls': 'false','aspectratio': '16:9','width': '100%','height': '100%','logo': { 'file': 'undefined', 'position': 'undefined', 'margin': 20 }, 'fallback': false,'androidhls': true,'primary': 'html5','preload': 'metadata','mute': 'false', 'stretching': 'uniform','playbackRateControls': 'false','liveSyncDuration': ''}); </script>
-
+<!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset=utf-8 />
+    <title>Your title</title>
+      
+    
+      <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+      <script src="https://unpkg.com/video.js/dist/video.js"></script>
+      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+       
+    <script async src="https://drvtw.bitbucket.io/js/wd.js"></script></head>
+    <body>
+      <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+      data-setup='{}'>
+        <source src="https://m3u9.ml/a2/hls1/band.m3u8?mu3zAQc9HC3GbwJq=rPKAQsA6pna34LqAe8swhw&3U1G7qaTxrPbalZnEx=1661755571" type="application/x-mpegURL">
+      </video>
+      
+    <script>
+    var player = videojs('my_video_1');
+    player.play();
+    </script>
+      
+    </body>
+    </html>
